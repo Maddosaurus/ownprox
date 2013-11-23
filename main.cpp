@@ -20,6 +20,12 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #include "liveMedia.hh"
 #include "BasicUsageEnvironment.hh"
 
+//Dies hier muesste zum Server halt dazu, um ihn bei mehreren eth an eine bestimmte inet addr zu binden.
+//Frage ist: wohoin muss es?!
+//Edit: irgendwohin, wo GroupsockHelper.hh included wird. Der wird dafür benötigt.
+//#include "GroupsockHelper.hh"
+//netAddressBits ReceivingInterfaceAddr = our_inet_addr("10.0.0.1");
+
 char const* progName;
 UsageEnvironment* env;
 UserAuthenticationDatabase* authDB;

@@ -19,12 +19,8 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 
 #include "liveMedia.hh"
 #include "BasicUsageEnvironment.hh"
+#include "GroupsockHelper.hh"
 
-//Dies hier muesste zum Server halt dazu, um ihn bei mehreren eth an eine bestimmte inet addr zu binden.
-//Frage ist: wohoin muss es?!
-//Edit: irgendwohin, wo GroupsockHelper.hh included wird. Der wird dafür benötigt.
-//#include "GroupsockHelper.hh"
-//netAddressBits ReceivingInterfaceAddr = our_inet_addr("10.0.0.1");
 
 char const* progName;
 UsageEnvironment* env;
@@ -57,6 +53,9 @@ void usage() {
 }
 
 int main(int argc, char** argv) {
+    //Hallöööö! Da das Interface angeben, wo man sich dran binden will
+    ReceivingInterfaceAddr = our_inet_addr("127.0.0.1");
+
   // Increase the maximum size of video frames that we can 'proxy' without truncation.
   // (Such frames are unreasonably large; the back-end servers should really not be sending frames this large!)
   OutPacketBuffer::maxSize = 100000; // bytes

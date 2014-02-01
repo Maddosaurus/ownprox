@@ -70,6 +70,7 @@ void usage() {
          << " [-t|-T <http-port>]"
          << " [-u <username> <password>]"
          << " [-R]"
+         << " [-b <IP-adress>]"
          << " <rtsp-url-1> ... <rtsp-url-n>\n";
     exit(1);
 }
